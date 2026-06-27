@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mooncake - AI Friends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            moon: {
+              pink: '#ff8fb3',
+              purple: '#b59cff',
+              blue: '#8cd0ff',
+              yellow: '#ffda75',
+              bg: '#181621',
+              surface: '#252233',
+              panel: '#322e45',
+            }
+          },
+          fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+            display: ['Quicksand', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'bounce-soft': 'bounceSoft 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 5px rgba(255, 143, 179, 0.2)' },
+              '100%': { boxShadow: '0 0 20px rgba(255, 143, 179, 0.6)' },
+            },
+            bounceSoft: {
+              '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+              '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700;800&display=swap');
+    body {
+      background-color: #181621;
+      color: #e2e8f0;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Custom Scrollbar for main areas */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 143, 179, 0.5);
+    }
+
+    .glass-panel {
+      background: rgba(37, 34, 51, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <script>
+    // Robust polyfill for process.env to prevent crashes in preview environments
+    window.process = window.process || {};
+    window.process.env = window.process.env || {};
+    window.process.env.API_KEY = window.process.env.API_KEY || 'dummy_key';
+  </script>
+  </head>
+<body>
+  <div id="root" class="h-screen w-screen flex flex-col"></div>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.js"></script></body>
+</html>
