@@ -1,0 +1,8 @@
+{
+  "name": "Mooncake - AI Friends",
+  "description": "A cute, cozy, and eye-catching AI companion and character roleplay application.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
